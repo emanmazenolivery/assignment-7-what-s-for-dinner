@@ -1,0 +1,391 @@
+body { 
+    background-color: #FFF9EB;
+}
+:root {
+    --main-black: #111828;
+    --main-orange: #F54A00;
+    --secondary-orange: #FF6900;
+}
+
+
+/* -------------- Header Start -------------- */
+
+
+/* Navbar */
+#header {
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08) !important;
+    position: relative;
+    z-index: 1000;
+}
+
+.border-orange {
+    border-color: #ffedd5 !important;
+}
+
+/* Logo */
+.logo-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #f97316, #ef4444);
+}
+
+/* Navigation Icons */
+.nav-icon {
+    border: none;
+    background: transparent;
+    color: #4b5563;
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.nav-icon:hover,
+.mobile-nav-link:hover {
+    color: #ea580c;
+}
+
+.nav-icon i {
+    font-size: 21px;
+}
+
+/* Profile Image */
+.profile-img {
+    width: 40px;
+    height: 40px;
+    object-fit: cover;
+    border-color: #fdba74 !important;
+    cursor: pointer;
+}
+
+/* Mobile Navigation */
+.mobile-nav-link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    border: none;
+    background: transparent;
+    color: #4b5563;
+    text-align: left;
+    cursor: pointer;
+    transition: color 0.3s ease;
+    padding: 0;
+}
+
+.mobile-nav-link i {
+    font-size: 20px;
+    width: 24px;
+}
+
+.mobile-profile-img {
+    width: 32px;
+    height: 32px;
+    object-fit: cover;
+    border: 2px solid #fdba74;
+}
+
+/* -------------  END of HEDEAR ------------- */
+/* -------------  START of MAIN Section ------------- */
+
+
+/* ================= MAIN RECIPE section ================= */
+
+#main-content {
+    max-width: 1280px;
+}
+
+.border-orange {
+    border-color: #ffedd5 !important;
+}
+
+/* Two-column layout above 1024px */
+.recipe-layout {
+    display: grid;
+    grid-template-columns: 2fr 3fr;
+    height: 750px;
+}
+
+/* Switch to one column at 1024px */
+@media (max-width: 1024px) {
+    .recipe-layout {
+        grid-template-columns: 1fr;
+        height: auto;
+    }
+
+    .recipe-image-section {
+        height: 400px;
+    }
+
+    .recipe-details {
+        height: auto;
+        overflow: visible;
+    }
+}
+
+/* ================= RECIPE IMAGE ================= */
+
+.recipe-image-section {
+    min-width: 0;
+    height: 100%;
+    overflow: hidden;
+}
+
+.recipe-image {
+    object-fit: cover;
+}
+
+.recipe-info-overlay {
+    background: rgba(255, 255, 255, 0.95);
+}
+
+/* ================= RECIPE ACTION BUTTONS ================= */
+
+.recipe-action-btn {
+    width: 48px;
+    height: 48px;
+    border: none;
+    border-radius: 12px;
+    background-color: #ffedd5;
+    color: #ea580c;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.recipe-action-btn:hover {
+    background-color: #fed7aa;
+    color: #ea580c;
+}
+
+/* ========= CUSTOM COLORS ========= */
+
+.text-orange {
+    color: var(--main-orange);
+}
+
+.bg-orange-light {
+    background-color: #ffedd5;
+}
+
+.bg-pink-light {
+    background-color: #fce7f3;
+}
+
+.text-pink {
+    color: #db2777;
+}
+.text-red {
+    color: #9E0811;
+}
+.bg-red-light {
+    background-color: #FEF2F2;
+}
+
+.text-red-2 {
+    color: #FA2D37;
+}
+
+/* ================= WARNING TIMER ================= */
+
+.border-timer-start {
+    border-left: 4px solid #FA2D37;
+    
+}
+
+/* ================= RECIPE TABS ================= */
+
+.recipe-tabs {
+    border: none;
+}
+.nav-tabs .nav-link.tab-button:hover {
+    color: #111828 !important;
+    /* boostrap is corrupting my hover style ( nav-link)  */
+}
+.tab-button {
+    border: none !important; 
+    /* cause boostrap nav-link is over writing it */
+}
+
+/* .active-custom { */
+.nav-tabs .nav-link.active {
+    color: #F54A00 !important; 
+    border-bottom: solid 2px #F54A00 !important;
+    /* it is easier to update active class than using .active-custom */
+}
+
+/* .tab-button {
+    min-height: 48px;
+    padding: 10px 2px;
+    border: none;
+    border-bottom: 2px solid transparent;
+    background-color: transparent;
+    color: #6b7280;
+    font-size: 14px;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8px;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: all 0.3s ease;
+} */
+
+.tab-button:hover {
+    color: #ea580c;
+}
+
+.tab-button.active-tab {
+    color: #ea580c;
+    border-bottom-color: #ea580c;
+}
+
+@media (max-width: 575px) {
+    .tab-button {
+        font-size: 11px;
+        gap: 3px;
+    }
+
+    .tab-button i {
+        font-size: 12px;
+    }
+}
+
+/* ================= INGREDIENTS ================= */
+
+.recipe-tab-content {
+    background-color: #fff8ec;
+}
+ul#ingredients-list li {
+    display: flex;
+    align-items: start;
+    justify-content: start;
+
+}
+
+ul#ingredients-list li div.ingredients-numbers {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    background-color: #f97316;
+    color: white;
+    border-radius: 50%;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    /* font-size: 10px; */
+    font-weight: 600;
+    font-style: normal;
+    margin-right: 12px;
+    
+}
+
+
+
+
+/* ================= INSTRUCTIONS ================= */
+
+.instruction-number {
+    width: 48px;
+    height: 48px;
+    min-width: 48px;
+    background-color: #f97316;
+    color: white;
+    border-radius: 16px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 20px;
+    font-weight: 700;
+    margin-right: 16px;
+}
+
+/* ================= NUTRITION ================= */
+
+.nutrition-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 8px;
+    padding: 16px;
+    background-color: #f9fafb;
+    border-radius: 12px;
+}
+
+.nutrition-item span {
+    color: #374151;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.nutrition-item strong {
+    color: #111827;
+    font-size: 18px;
+}
+
+.nutrition-icon {
+    width: 40px;
+    height: 40px;
+    min-width: 40px;
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* ================= CHEF'S TIPS ================= */
+
+.chef-tip {
+    display: flex;
+    align-items: flex-start;
+    gap: 12px;
+    padding: 16px;
+    background-color: #fffbeb;
+    border-left: 4px solid #fbbf24;
+    border-radius: 12px;
+}
+
+.chef-tip i {
+    color: #d97706;
+    font-size: 20px;
+    margin-top: 2px;
+}
+
+.chef-tip p {
+    color: #374151;
+    margin-bottom: 0;
+}
+
+/* ================= TRY ANOTHER RECIPE ================= */
+
+.try-recipe-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(90deg, #f97316, #ef4444);
+    color: white;
+    font-weight: 600;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.try-recipe-btn:hover {
+    background: linear-gradient(90deg, #ea580c, #dc2626);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    transform: scale(1.03);
+}
+
+/* Smaller button on mobile */
+@media (max-width: 575px) {
+    .try-recipe-btn {
+        padding: 10px 16px;
+        font-size: 14px;
+    }
+}
+
+
+/* -------------  END of MAIN Section ------------- */
+

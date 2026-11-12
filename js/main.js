@@ -546,6 +546,10 @@ var recipesData = [
             "Brown ground beef in a skillet and drain excess fat.",
             "Add taco seasoning and a splash of water; simmer briefly.",
             "Warm tortillas in a dry pan.",
+            "Fill tortillas with beef, lettuce, tomato, onion and cheese.",
+            "Brown ground beef in a skillet and drain excess fat.",
+            "Add taco seasoning and a splash of water; simmer briefly.",
+            "Warm tortillas in a dry pan.",
             "Fill tortillas with beef, lettuce, tomato, onion and cheese."
         ],
         nutrition: {
@@ -1634,36 +1638,13 @@ var recipesData = [
 
 // ----------- Read functions ------------- // 
 
-function XXdisplayRecipe() {
-    var addBtn = document.getElementById("try-another-btn");
-    var container = document.getElementById("recipe-display-section");
-
-    addBtn.addEventListener("click", function () {
-
-    // 1. Create a new paragraph
-    var newElement = document.createElement("div");
-
-    // 2. Add text to it
-    newElement.innerHTML = 
-   ``
-    ;
-
-    // 3. Add a class
-    newElement.classList.add("recipe-layout");
-
-    // 4. Append it to the section container
-    container.appendChild(newElement);
-        console.log("Button clicked !");
-        
-    });
-}
 
 
-// Variable to save the previous meal, to avoid duplicated meal
-let previousMealIndex;
+// Variable to save the previous meal, to avoid duplicated meals
+var previousMealIndex;
 
 function getRandomMeal() {
-    let randomIndex; 
+    var randomIndex; 
 
 
   do {  randomIndex = Math.floor(
@@ -1778,14 +1759,14 @@ function loopInstructions(input_items) {
 function loopNutritions(nutritionObj) {
 
     // IDs of my <span> elements
-    let nutritionItems = {
+    var nutritionItems = {
         calories: "calories-value",
         protein: "protein-value",
         carbohydrates: "carbs-value",
         fat: "fat-value",
         fiber: "fiber-value",
         sodium: "sodium-value"
-};
+    };
     //loop through spans 
     for (let key in nutritionItems) {
 
@@ -1814,7 +1795,8 @@ function loopTips(input_items) {
 
 function suggestMeal() {
         //Get a random meal object 
-        const randomMeal = getRandomMeal();
+        var randomMeal = getRandomMeal();
+        // var randomMeal = recipesData[11];  I was testing Instructions scoll when there are more than 4 steps 
 
         // Display the object in related html elements  
         displayMeal(randomMeal);
